@@ -1,0 +1,18 @@
+PODS:
+  - BluemixObjectStorage (0.0.4):
+    - BMSCore (~> 1.0.2)
+  - BMSAnalyticsAPI (1.0.1)
+  - BMSCore (1.0.2):
+    - BMSAnalyticsAPI (~> 1.0)
+
+DEPENDENCIES:
+  - BluemixObjectStorage (~> 0.0)
+
+SPEC CHECKSUMS:
+  BluemixObjectStorage: 6d51f12c8cf55b6f0e4dc7946fd548791ecc7e5d
+  BMSAnalyticsAPI: 50f5cec71a5ad0a9af232a833d6d37c2abda54ac
+  BMSCore: 77ef1d5cfc2cef0bb5662fb4bc14869b226e3ece
+
+PODFILE CHECKSUM: 42435eaaddc6d0a27b182d9bb5afc81d4445c62b
+
+COCOAPODS: 1.0.1

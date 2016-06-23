@@ -1,0 +1,6 @@
+framework module Pods_bluemix_object_storage_sample2Tests {
+  umbrella header "Pods-bluemix-object-storage-sample2Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
