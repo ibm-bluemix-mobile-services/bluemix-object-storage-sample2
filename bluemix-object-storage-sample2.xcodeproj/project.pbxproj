@@ -11,11 +11,13 @@
 		34DB5708F6B3150CC9542F72 /* Pods_bluemix_object_storage_sample2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBC1BAB49BB7EA85FEDD375 /* Pods_bluemix_object_storage_sample2.framework */; };
 		CE2AA6941D1AD678007E73FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA6931D1AD678007E73FD /* AppDelegate.swift */; };
 		CE2AA6961D1AD678007E73FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA6951D1AD678007E73FD /* LoginViewController.swift */; };
-		CE2AA6981D1AD678007E73FD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA6971D1AD678007E73FD /* SecondViewController.swift */; };
+		CE2AA6981D1AD678007E73FD /* PublicPhotoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA6971D1AD678007E73FD /* PublicPhotoListController.swift */; };
 		CE2AA69B1D1AD678007E73FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2AA6991D1AD678007E73FD /* Main.storyboard */; };
 		CE2AA69D1D1AD678007E73FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2AA69C1D1AD678007E73FD /* Assets.xcassets */; };
 		CE2AA6A01D1AD678007E73FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2AA69E1D1AD678007E73FD /* LaunchScreen.storyboard */; };
 		CE2AA6AB1D1AD678007E73FD /* bluemix_object_storage_sample2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA6AA1D1AD678007E73FD /* bluemix_object_storage_sample2Tests.swift */; };
+		CE5DA9861D1C5C5100E50C45 /* BluemixConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DA9851D1C5C5100E50C45 /* BluemixConsts.swift */; };
+		CE5DA9881D1C64E300E50C45 /* PrivatePhotoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DA9871D1C64E300E50C45 /* PrivatePhotoListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 		CE2AA6901D1AD678007E73FD /* bluemix-object-storage-sample2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bluemix-object-storage-sample2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2AA6931D1AD678007E73FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE2AA6951D1AD678007E73FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		CE2AA6971D1AD678007E73FD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		CE2AA6971D1AD678007E73FD /* PublicPhotoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicPhotoListController.swift; sourceTree = "<group>"; };
 		CE2AA69A1D1AD678007E73FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE2AA69C1D1AD678007E73FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE2AA69F1D1AD678007E73FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		CE2AA6A61D1AD678007E73FD /* bluemix-object-storage-sample2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bluemix-object-storage-sample2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2AA6AA1D1AD678007E73FD /* bluemix_object_storage_sample2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bluemix_object_storage_sample2Tests.swift; sourceTree = "<group>"; };
 		CE2AA6AC1D1AD678007E73FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE5DA9851D1C5C5100E50C45 /* BluemixConsts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluemixConsts.swift; sourceTree = "<group>"; };
+		CE5DA9871D1C64E300E50C45 /* PrivatePhotoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivatePhotoListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +108,13 @@
 			children = (
 				CE2AA6931D1AD678007E73FD /* AppDelegate.swift */,
 				CE2AA6951D1AD678007E73FD /* LoginViewController.swift */,
-				CE2AA6971D1AD678007E73FD /* SecondViewController.swift */,
+				CE2AA6971D1AD678007E73FD /* PublicPhotoListController.swift */,
 				CE2AA6991D1AD678007E73FD /* Main.storyboard */,
 				CE2AA69C1D1AD678007E73FD /* Assets.xcassets */,
 				CE2AA69E1D1AD678007E73FD /* LaunchScreen.storyboard */,
 				CE2AA6A11D1AD678007E73FD /* Info.plist */,
+				CE5DA9851D1C5C5100E50C45 /* BluemixConsts.swift */,
+				CE5DA9871D1C64E300E50C45 /* PrivatePhotoListController.swift */,
 			);
 			path = "bluemix-object-storage-sample2";
 			sourceTree = "<group>";
@@ -333,8 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2AA6981D1AD678007E73FD /* SecondViewController.swift in Sources */,
+				CE2AA6981D1AD678007E73FD /* PublicPhotoListController.swift in Sources */,
 				CE2AA6941D1AD678007E73FD /* AppDelegate.swift in Sources */,
+				CE5DA9861D1C5C5100E50C45 /* BluemixConsts.swift in Sources */,
+				CE5DA9881D1C64E300E50C45 /* PrivatePhotoListController.swift in Sources */,
 				CE2AA6961D1AD678007E73FD /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

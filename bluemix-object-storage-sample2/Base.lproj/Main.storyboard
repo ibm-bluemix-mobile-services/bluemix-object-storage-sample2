@@ -66,7 +66,7 @@
         <!--Public Controller-->
         <scene sceneID="ENx-rQ-o9I">
             <objects>
-                <viewController id="K05-83-V0O" userLabel="Public Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PublicPhotoListController" id="K05-83-V0O" userLabel="Public Controller" customClass="PublicPhotoListController" customModule="bluemix_object_storage_sample2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WAG-rg-vHP"/>
                         <viewControllerLayoutGuide type="bottom" id="2zG-RS-wH5"/>
@@ -110,7 +110,7 @@
         <!--Private Controller-->
         <scene sceneID="hfw-Rr-tmI">
             <objects>
-                <viewController id="EkJ-Cl-J3F" userLabel="Private Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrivatePhotoListController" id="EkJ-Cl-J3F" userLabel="Private Controller" customClass="PrivatePhotoListController" customModule="bluemix_object_storage_sample2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bjC-n6-UTU"/>
                         <viewControllerLayoutGuide type="bottom" id="9tt-Bs-hfN"/>
@@ -153,6 +153,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oFS-nr-VJf"/>
+        <segue reference="MYr-Gp-3pF"/>
     </inferredMetricsTieBreakers>
 </document>
