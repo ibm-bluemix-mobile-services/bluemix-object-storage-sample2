@@ -11,8 +11,8 @@ import BluemixObjectStorage
 
 class LoginViewController: UIViewController {
     
-    static var objectStore: ObjectStorage
-    internal var authToken: String
+    var objectStore: ObjectStorage?
+    internal var authToken: String = ""
     
 
     @IBOutlet weak var usernameText: UITextField!
@@ -20,9 +20,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    @IBAction func login(_ sender: AnyObject) {
+    @IBAction func login(sender: AnyObject) {
         
-        LoginViewController.objectStore.connect(userId:usernameText.text, password:passwordText.text, region: BluemixConsts.REGION_DALLAS, completionHandler:{ (error) in
+        self.objectStore!.connect(userId:usernameText.text!, password:passwordText.text!, region: BluemixConsts.REGION_DALLAS, completionHandler:{ (error) in
             if error != nil{
                 let alertController = UIAlertController(title: "Error", message:
                     "Your credentials did not succeed", preferredStyle: UIAlertControllerStyle.Alert)
@@ -44,16 +44,16 @@ class LoginViewController: UIViewController {
         
         self.disableLogin()
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector(("handleBackgroundTap")))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleBackgroundTap))
        
         tapRecognizer.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapRecognizer)
         
-        LoginViewController.objectStore = ObjectStorage(BluemixConsts.ProjectId)
-        if self.authToken == nil{
+        self.objectStore = ObjectStorage(projectId: BluemixConsts.ProjectId)
+        if self.authToken.isEmpty{
             self.enableLogin()
         }else{
-            LoginViewController.objectStore.connect(authToken:authToken, region:BluemixConsts.REGION_DALLAS, completionHandler:{ (error) in
+            self.objectStore!.connect(authToken, region:BluemixConsts.REGION_DALLAS, completionHandler:{ (error) in
                 if error != nil{
                     let alertController = UIAlertController(title: "Error", message:
                         "Your Token Expire, Please Login", preferredStyle: UIAlertControllerStyle.Alert)
@@ -93,7 +93,7 @@ class LoginViewController: UIViewController {
     }
     
 
-
+    
     func handleBackgroundTap(sender: UITapGestureRecognizer) {
         
         usernameText.resignFirstResponder()
@@ -101,19 +101,19 @@ class LoginViewController: UIViewController {
     }
     
     func enableLogin(){
-        self.indicateLogin.isHidden = true
+        self.indicateLogin.hidden = true
         self.indicateLogin.stopAnimating()
-        self.usernameText.isEnabled = true
-        self.passwordText.isEnabled = true
-        self.loginButton.isEnabled = true
+        self.usernameText.enabled = true
+        self.passwordText.enabled = true
+        self.loginButton.enabled = true
     }
     
     func disableLogin(){
-        self.indicateLogin.isHidden = false
+        self.indicateLogin.hidden = false
         self.indicateLogin.startAnimating()
-        self.usernameText.isEnabled = false
-        self.passwordText.isEnabled = false
-        self.loginButton.isEnabled = false
+        self.usernameText.enabled = false
+        self.passwordText.enabled = false
+        self.loginButton.enabled = false
     }
 
     
