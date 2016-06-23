@@ -18,6 +18,7 @@
 		CE2AA6AB1D1AD678007E73FD /* bluemix_object_storage_sample2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA6AA1D1AD678007E73FD /* bluemix_object_storage_sample2Tests.swift */; };
 		CE5DA9861D1C5C5100E50C45 /* BluemixConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DA9851D1C5C5100E50C45 /* BluemixConsts.swift */; };
 		CE5DA9881D1C64E300E50C45 /* PrivatePhotoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DA9871D1C64E300E50C45 /* PrivatePhotoListController.swift */; };
+		CEEC607F1D1C794D0010FD64 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC607E1D1C794D0010FD64 /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		CE2AA6AC1D1AD678007E73FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE5DA9851D1C5C5100E50C45 /* BluemixConsts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluemixConsts.swift; sourceTree = "<group>"; };
 		CE5DA9871D1C64E300E50C45 /* PrivatePhotoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivatePhotoListController.swift; sourceTree = "<group>"; };
+		CEEC607E1D1C794D0010FD64 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				CE2AA6A11D1AD678007E73FD /* Info.plist */,
 				CE5DA9851D1C5C5100E50C45 /* BluemixConsts.swift */,
 				CE5DA9871D1C64E300E50C45 /* PrivatePhotoListController.swift */,
+				CEEC607E1D1C794D0010FD64 /* PhotoCell.swift */,
 			);
 			path = "bluemix-object-storage-sample2";
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				CE2AA6941D1AD678007E73FD /* AppDelegate.swift in Sources */,
 				CE5DA9861D1C5C5100E50C45 /* BluemixConsts.swift in Sources */,
 				CE5DA9881D1C64E300E50C45 /* PrivatePhotoListController.swift in Sources */,
+				CEEC607F1D1C794D0010FD64 /* PhotoCell.swift in Sources */,
 				CE2AA6961D1AD678007E73FD /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
