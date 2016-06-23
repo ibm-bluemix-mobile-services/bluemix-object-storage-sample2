@@ -13,10 +13,27 @@
 
 import UIKit
 
-class PhotoCell: UITableViewCell {
+class PublicPhotoCell: UITableViewCell {
     
     
     @IBOutlet weak var objectImage: UIImageView!
+    override func awakeFromNib() {
+        
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        
+        super.setSelected(selected, animated: animated)
+    }
+    
+}
+
+class PrivatePhotoCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var objectImage: UIImageView!
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
