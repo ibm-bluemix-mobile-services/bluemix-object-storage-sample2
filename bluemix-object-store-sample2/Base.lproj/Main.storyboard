@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="7000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -35,7 +37,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="login" destination="yC9-3Y-UPE" id="mJP-AC-jz1"/>
@@ -77,31 +79,44 @@
                                 </items>
                                 <color key="barTintColor" red="0.60297143664085096" green="1" blue="0.62219584370623804" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ryI-eb-cHk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="173" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ryI-eb-cHk">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="507"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="161" id="jIa-VS-Uas">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="161"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="173" id="jIa-VS-Uas" userLabel="PhotoCell" customClass="PublicPhotoCell" customModule="bluemix_object_store_sample2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="173"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jIa-VS-Uas" id="WDZ-eU-hgy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="160.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uho-pr-e3I">
-                                                    <rect key="frame" x="0.0" y="8" width="600" height="151.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uho-pr-e3I">
+                                                    <rect key="frame" x="0.0" y="8" width="600" height="216"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Uho-pr-e3I" firstAttribute="leading" secondItem="WDZ-eU-hgy" secondAttribute="leading" id="LWR-rE-Cxu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Uho-pr-e3I" secondAttribute="bottom" constant="-59.5" id="S6K-YC-w6n"/>
+                                                <constraint firstItem="Uho-pr-e3I" firstAttribute="top" secondItem="WDZ-eU-hgy" secondAttribute="topMargin" id="eDY-88-wRY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Uho-pr-e3I" secondAttribute="trailing" id="sib-I9-vbS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="publicImageView" destination="Uho-pr-e3I" id="rLy-Wq-3Hk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vt6-LN-62n" secondAttribute="trailing" id="1iZ-sR-PRS"/>
-                            <constraint firstItem="vt6-LN-62n" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="94C-2L-Puy"/>
-                            <constraint firstItem="vt6-LN-62n" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="ukv-5E-TIx"/>
+                            <constraint firstItem="vt6-LN-62n" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="EVs-wE-PAx"/>
+                            <constraint firstItem="ryI-eb-cHk" firstAttribute="leading" secondItem="vt6-LN-62n" secondAttribute="leading" id="FlO-rC-rUI"/>
+                            <constraint firstAttribute="trailing" secondItem="ryI-eb-cHk" secondAttribute="trailing" id="KyS-Fq-9rI"/>
+                            <constraint firstItem="ryI-eb-cHk" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="aUJ-C3-xV8"/>
+                            <constraint firstItem="vt6-LN-62n" firstAttribute="top" secondItem="ryI-eb-cHk" secondAttribute="bottom" id="b0V-SH-W0K"/>
+                            <constraint firstItem="ryI-eb-cHk" firstAttribute="trailing" secondItem="vt6-LN-62n" secondAttribute="trailing" id="css-RU-RUJ"/>
+                            <constraint firstItem="ryI-eb-cHk" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="v2k-B2-z48"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Public" image="public-cloud-icon" selectedImage="public-cloud-icon" id="acW-dT-cKf"/>
@@ -141,25 +156,28 @@
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="165" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kPk-Zo-7OX">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="507"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="ch5-pw-SSJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="ch5-pw-SSJ" customClass="PrivatePhotoCell" customModule="bluemix_object_store_sample2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ch5-pw-SSJ" id="xHy-9b-ygM">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="164.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="165"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cE9-EQ-4eA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="164.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="165"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="privateImageView" destination="cE9-EQ-4eA" id="ohg-17-byj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="xOW-N3-UcM" secondAttribute="trailing" id="7Pr-rc-huW"/>
                             <constraint firstItem="xOW-N3-UcM" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="ap8-16-RNo"/>
@@ -180,7 +198,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>

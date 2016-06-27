@@ -14,6 +14,8 @@
 		CE82A3491D1DD9AF0029F8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE82A3481D1DD9AF0029F8E4 /* Assets.xcassets */; };
 		CE82A34C1D1DD9AF0029F8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE82A34A1D1DD9AF0029F8E4 /* LaunchScreen.storyboard */; };
 		CE82A3541D1DF28D0029F8E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82A3531D1DF28D0029F8E4 /* LoginViewController.swift */; };
+		CE9C2AFC1D2169C2002352B6 /* PublicPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C2AFB1D2169C2002352B6 /* PublicPhotoCell.swift */; };
+		CE9C2AFE1D216ADA002352B6 /* PrivatePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C2AFD1D216ADA002352B6 /* PrivatePhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		CE82A34B1D1DD9AF0029F8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE82A34D1D1DD9AF0029F8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE82A3531D1DF28D0029F8E4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE9C2AFB1D2169C2002352B6 /* PublicPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicPhotoCell.swift; sourceTree = "<group>"; };
+		CE9C2AFD1D216ADA002352B6 /* PrivatePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivatePhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				CE82A34A1D1DD9AF0029F8E4 /* LaunchScreen.storyboard */,
 				CE82A34D1D1DD9AF0029F8E4 /* Info.plist */,
 				CE82A3531D1DF28D0029F8E4 /* LoginViewController.swift */,
+				CE9C2AFB1D2169C2002352B6 /* PublicPhotoCell.swift */,
+				CE9C2AFD1D216ADA002352B6 /* PrivatePhotoCell.swift */,
 			);
 			path = "bluemix-object-store-sample2";
 			sourceTree = "<group>";
@@ -141,7 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9C2AFE1D216ADA002352B6 /* PrivatePhotoCell.swift in Sources */,
 				CE82A3541D1DF28D0029F8E4 /* LoginViewController.swift in Sources */,
+				CE9C2AFC1D2169C2002352B6 /* PublicPhotoCell.swift in Sources */,
 				CE82A3441D1DD9AF0029F8E4 /* PrivateViewController.swift in Sources */,
 				CE82A3401D1DD9AF0029F8E4 /* AppDelegate.swift in Sources */,
 				CE82A3421D1DD9AF0029F8E4 /* PublicViewController.swift in Sources */,
@@ -294,6 +302,7 @@
 				CE82A3521D1DD9AF0029F8E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
