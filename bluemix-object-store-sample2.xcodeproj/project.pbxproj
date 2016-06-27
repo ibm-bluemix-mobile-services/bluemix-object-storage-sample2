@@ -16,6 +16,7 @@
 		CE82A3541D1DF28D0029F8E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82A3531D1DF28D0029F8E4 /* LoginViewController.swift */; };
 		CE9C2AFC1D2169C2002352B6 /* PublicPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C2AFB1D2169C2002352B6 /* PublicPhotoCell.swift */; };
 		CE9C2AFE1D216ADA002352B6 /* PrivatePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C2AFD1D216ADA002352B6 /* PrivatePhotoCell.swift */; };
+		CE9C2B001D219411002352B6 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C2AFF1D219411002352B6 /* TabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CE82A3531D1DF28D0029F8E4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE9C2AFB1D2169C2002352B6 /* PublicPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicPhotoCell.swift; sourceTree = "<group>"; };
 		CE9C2AFD1D216ADA002352B6 /* PrivatePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivatePhotoCell.swift; sourceTree = "<group>"; };
+		CE9C2AFF1D219411002352B6 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				CE82A3531D1DF28D0029F8E4 /* LoginViewController.swift */,
 				CE9C2AFB1D2169C2002352B6 /* PublicPhotoCell.swift */,
 				CE9C2AFD1D216ADA002352B6 /* PrivatePhotoCell.swift */,
+				CE9C2AFF1D219411002352B6 /* TabController.swift */,
 			);
 			path = "bluemix-object-store-sample2";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9C2B001D219411002352B6 /* TabController.swift in Sources */,
 				CE9C2AFE1D216ADA002352B6 /* PrivatePhotoCell.swift in Sources */,
 				CE82A3541D1DF28D0029F8E4 /* LoginViewController.swift in Sources */,
 				CE9C2AFC1D2169C2002352B6 /* PublicPhotoCell.swift in Sources */,

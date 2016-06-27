@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--LoginView-->
         <scene sceneID="59a-kk-hSe">
             <objects>
-                <viewController id="G9H-Tw-vPl" customClass="LoginViewController" customModule="bluemix_object_store_sample2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LoginController" storyboardIdentifier="LoginViewController" title="LoginView" id="G9H-Tw-vPl" customClass="LoginViewController" customModule="bluemix_object_store_sample2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oql-sV-1pT"/>
                         <viewControllerLayoutGuide type="bottom" id="gco-OZ-11j"/>
@@ -33,15 +33,14 @@
                                 <rect key="frame" x="281" y="312" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="login:" destination="G9H-Tw-vPl" eventType="touchUpInside" id="ecI-t8-AHI"/>
+                                    <action selector="login:" destination="G9H-Tw-vPl" eventType="touchUpInside" id="EAH-Kw-AgD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="login" destination="yC9-3Y-UPE" id="mJP-AC-jz1"/>
-                        <outlet property="loginButton" destination="yC9-3Y-UPE" id="RpV-Jr-0ZA"/>
+                        <outlet property="loginButton" destination="yC9-3Y-UPE" id="iea-HR-G4x"/>
                         <outlet property="passwordField" destination="dGJ-cO-Yyd" id="zgZ-Vm-E5P"/>
                         <outlet property="usernameField" destination="Jh9-wR-dAQ" id="skV-dW-ODH"/>
                     </connections>
@@ -120,6 +119,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Public" image="public-cloud-icon" selectedImage="public-cloud-icon" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="CWg-Bh-ptI" id="LHn-56-W1N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -190,10 +192,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabController" customModule="bluemix_object_store_sample2" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
