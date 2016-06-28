@@ -1,10 +1,16 @@
+# Example YAML to get you started quickly.
+# Be aware that YAML has indentation based scoping.
+# Code completion support is available so start typing for available options.
 swagger: '2.0'
 
+# This is your document metadata
 info:
   version: "0.0.1"
   title: Object Storage backend
 basePath: /
+# 
 schemes:
+  # tip: remove http to make production-grade
   - https
 # format of bodies a client can send (Content-Type)
 consumes:
@@ -12,15 +18,20 @@ consumes:
 # format of the responses to the client (Accepts)
 produces:
   - application/json
+# Describe your paths here
 paths:
   /swagger:
     x-swagger-pipe: swagger_raw
   /public:
     x-swagger-router-controller: public
+    # This is a HTTP operation
     get:
       operationId: listPublicContainer
+      # Describe this verb here. Note: you can use markdown
       description: Retrieve a list of objects inside the *public* container
+      # Expected responses for this operation:
       responses:
+        # Response code
         200:
           $ref: '#/responses/containerGet'
   /public/{object}:
@@ -63,7 +74,7 @@ paths:
     x-swagger-router-controller: private
     get:
       operationId: listPrivateContainer
-      description: Retrieve a list of objects inside this user's container
+      description: Retrieve a list of objects inside the user's container
       responses:
         200:
           $ref: '#/responses/containerGet'
@@ -83,7 +94,7 @@ paths:
           $ref: '#/responses/serverError'
     put:
       operationId: createPrivateObject
-      description: Store `object` inside this user's container
+      description: Store `object` inside the user's container
       parameters:
         - $ref: '#/parameters/storeObject'
       responses:
@@ -93,7 +104,7 @@ paths:
           $ref: '#/responses/serverError'
     delete:
       operationId: deletePrivateObject
-      description: Delete `object` from this user's container
+      description: Delete `object` from the user's container
       parameters: 
         - $ref: '#/parameters/deleteObject'
       responses:
