@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import BMSCore
+import BMSSecurity
 
 class MyAuthDelegate: AuthenticationDelegate {
     
