@@ -18,7 +18,7 @@ class TabController: UITabBarController, UITabBarControllerDelegate {
     // UITabBarDelegate
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         if item.title! == "Private"{
-            //MAY NEED TO DELETE THE RELATIONSHIP TO SHOW PRIVATE PAGE
+            
         //      if !loggedIn(){
         //          ShowLoginViewController
         //      }else{

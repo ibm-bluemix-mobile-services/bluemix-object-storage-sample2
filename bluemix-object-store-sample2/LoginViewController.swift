@@ -40,6 +40,7 @@ class LoginViewController : UIViewController {
         self.authDelegate = MyAuthDelegate(loginViewController: self)
         
         MCAAuthorizationManager.sharedInstance.registerAuthenticationDelegate(self.authDelegate!, realm: customRealm)
+        self.handleSuccessfulLogin()
     }
     
     func onAuthChallengeReceived(challenge:AnyObject){
@@ -76,9 +77,9 @@ class LoginViewController : UIViewController {
     
     func handleSuccessfulLogin() {
         
-        let alert = UIAlertController(title: "", message: "Login succesfull", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: "", message: "Login succesfull", preferredStyle: UIAlertControllerStyle.Alert)
+//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+//        self.presentViewController(alert, animated: true, completion: nil)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewControllerWithIdentifier("PrivatePhotos") as! PrivateViewController

@@ -67,7 +67,7 @@
         <!--Public-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" userLabel="Public" customClass="PublicViewController" customModule="bluemix_object_store_sample2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PublicPhotos" id="9pv-A4-QxB" userLabel="Public" customClass="PublicViewController" customModule="bluemix_object_store_sample2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -136,6 +136,7 @@
                     <tabBarItem key="tabBarItem" title="Public" image="public-cloud-icon" selectedImage="public-cloud-icon" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="cameraButton" destination="CWg-Bh-ptI" id="LHn-56-W1N"/>
+                        <outlet property="tableView" destination="ryI-eb-cHk" id="QvY-mz-8pj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -145,7 +146,7 @@
         <!--Private-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" userLabel="Private" customClass="PrivateViewController" customModule="bluemix_object_store_sample2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrivatePhotos" id="8rJ-Kc-sve" userLabel="Private" customClass="PrivateViewController" customModule="bluemix_object_store_sample2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -171,7 +172,7 @@
                                 </items>
                                 <color key="barTintColor" red="0.71245451120000003" green="0.90228945520000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="165" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kPk-Zo-7OX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="165" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kPk-Zo-7OX">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="507"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -182,10 +183,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="165"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cE9-EQ-4eA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cE9-EQ-4eA">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="165"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cE9-EQ-4eA" firstAttribute="top" secondItem="xHy-9b-ygM" secondAttribute="top" id="FmI-R4-m6b"/>
+                                                <constraint firstItem="cE9-EQ-4eA" firstAttribute="leading" secondItem="xHy-9b-ygM" secondAttribute="leading" id="JCs-rk-qbP"/>
+                                                <constraint firstAttribute="trailing" secondItem="cE9-EQ-4eA" secondAttribute="trailing" id="Wsq-M6-5RF"/>
+                                                <constraint firstItem="cE9-EQ-4eA" firstAttribute="centerY" secondItem="xHy-9b-ygM" secondAttribute="centerY" id="sKd-4o-B8g"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="privateImageView" destination="cE9-EQ-4eA" id="ohg-17-byj"/>
@@ -196,16 +203,24 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="xOW-N3-UcM" secondAttribute="trailing" id="7Pr-rc-huW"/>
-                            <constraint firstItem="xOW-N3-UcM" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="ap8-16-RNo"/>
-                            <constraint firstItem="xOW-N3-UcM" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="cjM-D3-Fuk"/>
+                            <constraint firstItem="kPk-Zo-7OX" firstAttribute="trailing" secondItem="xOW-N3-UcM" secondAttribute="trailing" id="0V6-Rb-ngp"/>
+                            <constraint firstItem="xOW-N3-UcM" firstAttribute="top" secondItem="kPk-Zo-7OX" secondAttribute="bottom" id="2Wj-ye-8VG"/>
+                            <constraint firstItem="xOW-N3-UcM" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="Bd6-vl-S7Q"/>
+                            <constraint firstItem="kPk-Zo-7OX" firstAttribute="leading" secondItem="xOW-N3-UcM" secondAttribute="leading" id="F8c-5q-HXo"/>
+                            <constraint firstAttribute="trailing" secondItem="kPk-Zo-7OX" secondAttribute="trailing" id="Q8V-Bf-LeE"/>
+                            <constraint firstItem="kPk-Zo-7OX" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="iPe-cb-3FM"/>
+                            <constraint firstItem="kPk-Zo-7OX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="qsL-Pb-GSK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Private" image="lock-2" selectedImage="lock-2" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Private" image="lock-2" selectedImage="lock-2" id="X5D-zR-gPt"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="cKg-u1-5ew" id="1Li-nl-fuM"/>
+                        <outlet property="tableView" destination="kPk-Zo-7OX" id="pOq-6i-QTH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="826" y="370"/>
         </scene>
         <!--Tab Controller-->
         <scene sceneID="yl2-sM-qoP">
