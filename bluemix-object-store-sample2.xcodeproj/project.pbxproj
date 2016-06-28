@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0ED1201D22BA460099EE46 /* MyAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED11F1D22BA460099EE46 /* MyAuthDelegate.swift */; };
 		CE82A3401D1DD9AF0029F8E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82A33F1D1DD9AF0029F8E4 /* AppDelegate.swift */; };
 		CE82A3421D1DD9AF0029F8E4 /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82A3411D1DD9AF0029F8E4 /* PublicViewController.swift */; };
 		CE82A3441D1DD9AF0029F8E4 /* PrivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82A3431D1DD9AF0029F8E4 /* PrivateViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE0ED11F1D22BA460099EE46 /* MyAuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAuthDelegate.swift; sourceTree = "<group>"; };
 		CE82A33C1D1DD9AF0029F8E4 /* bluemix-object-store-sample2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bluemix-object-store-sample2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE82A33F1D1DD9AF0029F8E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE82A3411D1DD9AF0029F8E4 /* PublicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				CE9C2AFB1D2169C2002352B6 /* PublicPhotoCell.swift */,
 				CE9C2AFD1D216ADA002352B6 /* PrivatePhotoCell.swift */,
 				CE9C2AFF1D219411002352B6 /* TabController.swift */,
+				CE0ED11F1D22BA460099EE46 /* MyAuthDelegate.swift */,
 			);
 			path = "bluemix-object-store-sample2";
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			files = (
 				CE9C2B001D219411002352B6 /* TabController.swift in Sources */,
 				CE9C2AFE1D216ADA002352B6 /* PrivatePhotoCell.swift in Sources */,
+				CE0ED1201D22BA460099EE46 /* MyAuthDelegate.swift in Sources */,
 				CE82A3541D1DF28D0029F8E4 /* LoginViewController.swift in Sources */,
 				CE9C2AFC1D2169C2002352B6 /* PublicPhotoCell.swift in Sources */,
 				CE82A3441D1DD9AF0029F8E4 /* PrivateViewController.swift in Sources */,
