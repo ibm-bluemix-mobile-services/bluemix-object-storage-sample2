@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import BMSCore
+import BMSSecurity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+    let mcaAuthManager = MCAAuthorizationManager.sharedInstance
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        BMSClient.sharedInstance.initializeWithBluemixAppRoute("<application-url>", bluemixAppGUID: "<appGuid>", bluemixRegion: "<region>")
+        BMSClient.sharedInstance.authorizationManager = MCAAuthorizationManager.sharedInstance
+        mcaAuthManager.setAuthorizationPersistencePolicy(PersistencePolicy.NEVER)
         return true
     }
 

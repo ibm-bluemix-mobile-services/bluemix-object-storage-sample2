@@ -35,7 +35,7 @@ class MyAuthDelegate: AuthenticationDelegate {
     
     func onAuthenticationChallengeReceived(authContext: AuthenticationContext, challenge: AnyObject){
         
-        logger.debug("received authentication challenge")
+        print("received authentication challenge")
         
         self.authContext = authContext
         self.loginViewController.onAuthChallengeReceived(challenge)
@@ -43,7 +43,7 @@ class MyAuthDelegate: AuthenticationDelegate {
     
     func onAuthenticationSuccess(info: AnyObject?) {
         
-        logger.debug("authentication successed. received info: \(info)")
+        print("authentication successed. received info: \(info)")
         
         let attributes = info!["attributes"]
         let token = attributes!!["token"]
@@ -56,7 +56,7 @@ class MyAuthDelegate: AuthenticationDelegate {
     
     func onAuthenticationFailure(info: AnyObject?){
         
-        logger.debug("authenticaton failured. received info: \(info)")
+        print("authenticaton failured. received info: \(info)")
         
         loginViewController.performSelectorOnMainThread(#selector(loginViewController.handleUnsuccessfulLogin), withObject: nil, waitUntilDone: false)
     }
