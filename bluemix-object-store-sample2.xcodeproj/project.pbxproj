@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		97658AA3EE4612C89C143F51 /* Pods_bluemix_object_store_sample2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26F7E135933793420DCCAA9 /* Pods_bluemix_object_store_sample2.framework */; };
 		CE0ED1201D22BA460099EE46 /* MyAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED11F1D22BA460099EE46 /* MyAuthDelegate.swift */; };
+		CE0ED1221D22F6540099EE46 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED1211D22F6540099EE46 /* HttpClient.swift */; };
+		CE0ED1241D22F66B0099EE46 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED1231D22F66B0099EE46 /* HttpError.swift */; };
+		CE0ED1261D22F6820099EE46 /* HttpResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED1251D22F6820099EE46 /* HttpResource.swift */; };
+		CE0ED1281D22F82B0099EE46 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED1271D22F82B0099EE46 /* AppConstants.swift */; };
 		CE82A3401D1DD9AF0029F8E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82A33F1D1DD9AF0029F8E4 /* AppDelegate.swift */; };
 		CE82A3421D1DD9AF0029F8E4 /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82A3411D1DD9AF0029F8E4 /* PublicViewController.swift */; };
 		CE82A3441D1DD9AF0029F8E4 /* PrivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82A3431D1DD9AF0029F8E4 /* PrivateViewController.swift */; };
@@ -26,6 +30,10 @@
 		A71E2D5435C97636864A4707 /* Pods-bluemix-object-store-sample2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bluemix-object-store-sample2.release.xcconfig"; path = "Pods/Target Support Files/Pods-bluemix-object-store-sample2/Pods-bluemix-object-store-sample2.release.xcconfig"; sourceTree = "<group>"; };
 		B26F7E135933793420DCCAA9 /* Pods_bluemix_object_store_sample2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bluemix_object_store_sample2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0ED11F1D22BA460099EE46 /* MyAuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAuthDelegate.swift; sourceTree = "<group>"; };
+		CE0ED1211D22F6540099EE46 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		CE0ED1231D22F66B0099EE46 /* HttpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		CE0ED1251D22F6820099EE46 /* HttpResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResource.swift; sourceTree = "<group>"; };
+		CE0ED1271D22F82B0099EE46 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		CE82A33C1D1DD9AF0029F8E4 /* bluemix-object-store-sample2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bluemix-object-store-sample2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE82A33F1D1DD9AF0029F8E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE82A3411D1DD9AF0029F8E4 /* PublicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +101,10 @@
 				CE9C2AFD1D216ADA002352B6 /* PrivatePhotoCell.swift */,
 				CE9C2AFF1D219411002352B6 /* TabController.swift */,
 				CE0ED11F1D22BA460099EE46 /* MyAuthDelegate.swift */,
+				CE0ED1211D22F6540099EE46 /* HttpClient.swift */,
+				CE0ED1231D22F66B0099EE46 /* HttpError.swift */,
+				CE0ED1251D22F6820099EE46 /* HttpResource.swift */,
+				CE0ED1271D22F82B0099EE46 /* AppConstants.swift */,
 			);
 			path = "bluemix-object-store-sample2";
 			sourceTree = "<group>";
@@ -228,10 +240,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0ED1261D22F6820099EE46 /* HttpResource.swift in Sources */,
 				CE9C2B001D219411002352B6 /* TabController.swift in Sources */,
 				CE9C2AFE1D216ADA002352B6 /* PrivatePhotoCell.swift in Sources */,
+				CE0ED1241D22F66B0099EE46 /* HttpError.swift in Sources */,
 				CE0ED1201D22BA460099EE46 /* MyAuthDelegate.swift in Sources */,
 				CE82A3541D1DF28D0029F8E4 /* LoginViewController.swift in Sources */,
+				CE0ED1221D22F6540099EE46 /* HttpClient.swift in Sources */,
+				CE0ED1281D22F82B0099EE46 /* AppConstants.swift in Sources */,
 				CE9C2AFC1D2169C2002352B6 /* PublicPhotoCell.swift in Sources */,
 				CE82A3441D1DD9AF0029F8E4 /* PrivateViewController.swift in Sources */,
 				CE82A3401D1DD9AF0029F8E4 /* AppDelegate.swift in Sources */,
