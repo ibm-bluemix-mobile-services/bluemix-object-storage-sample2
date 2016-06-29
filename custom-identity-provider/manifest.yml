@@ -1,0 +1,5 @@
+applications:
+- disk_quota: 128M
+  host: identity-provider
+  name: identity-provider
+  instances: 1
