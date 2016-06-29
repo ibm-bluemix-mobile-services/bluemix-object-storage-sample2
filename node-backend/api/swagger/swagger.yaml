@@ -6,18 +6,20 @@ swagger: '2.0'
 # This is your document metadata
 info:
   version: "0.0.1"
-  title: Object Storage backend
+  title: Object Storage Backend
+host: localhost:10010
 basePath: /
 # 
 schemes:
   # tip: remove http to make production-grade
+  - http
   - https
 # format of bodies a client can send (Content-Type)
-consumes:
-  - application/json
-# format of the responses to the client (Accepts)
-produces:
-  - application/json
+# consumes:
+#   - application/*
+# # format of the responses to the client (Accepts)
+# produces:
+# - application/json
 # Describe your paths here
 paths:
   /swagger:
@@ -119,11 +121,10 @@ definitions:
     title: ArrayOfObjects
     type: array
     items:
-      title: Object
       type: object
       properties:
         name:
-          type: string
+          type: string  
 parameters:
   getObject:
     name: object

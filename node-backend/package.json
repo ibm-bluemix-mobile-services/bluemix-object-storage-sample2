@@ -8,9 +8,11 @@
   "license": "",
   "main": "app.js",
   "dependencies": {
-    "bluemix-objectstorage": "^0.1.1",
+    "bluemix-objectstorage": "git+https://github.com/ibm-bluemix-mobile-services/bluemix-objectstorage-serversdk-nodejs.git",
     "bms-mca-token-validation-strategy": "^2.0.3",
+    "body-parser": "^1.15.2",
     "express": "^4.12.3",
+    "lodash": "^4.13.1",
     "passport": "^0.3.2",
     "swagger-express-mw": "^0.1.0"
   },

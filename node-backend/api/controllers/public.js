@@ -1,28 +1,21 @@
-'use strict'
 
 var ObjectStorage = require('bluemix-objectstorage').ObjectStorage;
 var _ = require('lodash');
 
 var objStorage = new ObjectStorage();
-var container;
-
-objStorage.getContainer('public')
-    .then(function(objContainer) {
-        container = objContainer;
-    })
-    .catch(function(err) {
-
-    });
 
 function listPublicContainer(req, res) {
     var objectList = [];
-    container.listObjects()
+    objStorage.getContainer('public')
+        .then(function(container) {
+            return container.listObjects();
+        })
         .then(function(list) {
-            _.forEach(list, function(name) {
-                var obj = { name: name };
+            _.forEach(list, function(object) {
+                var obj = { name: object.objectName() };
                 objectList.push(obj);
             });
-            res.status(200).send(objectList);
+            res.status(200).json(objectList);
         })
         .catch(function(err) {
             res.status(500).send(err.message);
@@ -31,12 +24,19 @@ function listPublicContainer(req, res) {
 
 function fetchPublicObject(req, res) {
     var objectName = req.swagger.params.object.value;
-    container.getObject(objectName)
+    var objStorageObj;
+    objStorage.getContainer('public')
+        .then(function(container) {
+            return container.getObject(objectName);
+        })
         .then(function(object) {
-            return object.load(false);
+            objStorageObj = object;
+            return object.load(false, true);
         })
         .then(function(content) {
-            req.status(200).send(content);
+            var contentType = objStorageObj.getContentType();
+            res.header('Content-Type', contentType);
+            res.status(200).send(content);
         })
         .catch(function(err) {
             if (err.name === 'ResourceNotFoundError') {
@@ -49,9 +49,15 @@ function fetchPublicObject(req, res) {
 }
 
 function createPublicObject(req, res) {
+    if (!req.headers['content-type']) {
+        throw new ReferenceError('The "content-type" header must be set in order for this operation to success');
+    }
     var objectName = req.swagger.params.object.value;
     var data = req.body;
-    container.createObject(objectName, data)
+    objStorage.getContainer('public')
+        .then(function(container) {
+            return container.createObject(objectName, data, true);
+        })
         .then(function() {
             res.status(200).send();
         })
@@ -62,7 +68,10 @@ function createPublicObject(req, res) {
 
 function deletePublicObject(req, res) {
     var objectName = req.swagger.params.object.value;
-    container.deleteObject(objectName)
+    objStorage.getContainer('public')
+        .then(function(container) {
+            return container.deleteObject(objectName);
+        })
         .then(function() {
             res.status(200).send();
         })

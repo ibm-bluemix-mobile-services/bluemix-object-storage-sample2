@@ -1,4 +1,3 @@
-'use strict';
 
 var SwaggerExpress = require('swagger-express-mw');
 var express = require('express');
@@ -10,20 +9,19 @@ passport.use(new MCABackendStrategy());
 
 var app = express();
 app.use(passport.initialize());
-module.exports = app; // for testing
+module.exports = app;
 
 var config = {
-  appRoot: __dirname // required config
+  appRoot: __dirname
 };
 
 SwaggerExpress.create(config, function(err, swaggerExpress) {
   if (err) { throw err; }
 
-  // install middleware
-  swaggerExpress.register(app);
-
   app.use(bodyParser.raw( { type: '*/*', limit: '5gb' } ));
   app.use('/private', passport.authenticate('mca-backend-strategy', { session: false }));
+
+  swaggerExpress.register(app);
 
   var port = process.env.PORT || 10010;
   app.listen(port);

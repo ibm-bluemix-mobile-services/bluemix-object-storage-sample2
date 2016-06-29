@@ -5,8 +5,8 @@ var jsonParser = require('body-parser').json();
 
 // Using hardcoded user repository
 var userRepository = {
-	"<mca-username>": { password:"<mca-password>", displayName:"", dob:""}
-}
+	"user": { password:"password", displayName:"", dob:""}
+};
 
 var challengeJson = {
 	status: "challenge",
@@ -16,7 +16,7 @@ var challengeJson = {
 };
 
 var app = express();
-
+var logger = log4js.getLogger("identity-provider");
 logger.info("Starting up");
 
 

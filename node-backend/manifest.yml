@@ -3,3 +3,6 @@ applications:
   host: sample-backend
   name: sample-backend
   instances: 1
+  services:
+    - mca
+    - object-storage

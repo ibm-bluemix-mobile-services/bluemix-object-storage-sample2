@@ -1,4 +1,3 @@
-'use strict'
 
 var ObjectStorage = require('bluemix-objectstorage').ObjectStorage;
 var _ = require('lodash');
@@ -29,15 +28,19 @@ function fetchPrivateObject(req, res) {
     var objectName = req.swagger.params.object.value;
     var securityContext = req.securityContext;
     var containerName = securityContext['imf.user'].id;
+    var objStorageObj;
     objStorage.getContainer(containerName)
         .then(function(container) {
-            return container.getObject(objectName)
+            return container.getObject(objectName);
         })
         .then(function(object) {
-            return object.load(false);
+            objStorageObj = object;
+            return object.load(false, true);
         })
         .then(function(content) {
-            req.status(200).send(content);
+            var contentType = objStorageObj.getContentType();
+            res.header('Content-Type', contentType);
+            res.status(200).send(content);
         })
         .catch(function(err) {
             if (err.name === 'ResourceNotFoundError') {
@@ -50,13 +53,16 @@ function fetchPrivateObject(req, res) {
 }
 
 function createPrivateObject(req, res) {
+    if (!req.headers['content-type']) {
+        throw new ReferenceError('The "content-type" header must be set in order for this operation to success');
+    }
     var objectName = req.swagger.params.object.value;
     var data = req.body;
     var securityContext = req.securityContext;
     var containerName = securityContext['imf.user'].id;
     objStorage.getContainer(containerName)
         .then(function(container) {
-            return container.createObject(objectName, data)
+            return container.createObject(objectName, data, true);
         })
         .then(function() {
             res.status(200).send();
