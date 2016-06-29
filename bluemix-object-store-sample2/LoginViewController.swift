@@ -41,6 +41,7 @@ class LoginViewController : UIViewController {
         
         MCAAuthorizationManager.sharedInstance.registerAuthenticationDelegate(self.authDelegate!, realm: customRealm)
         
+        self.handleSuccessfulLogin()//TODO REMOVE, THIS IS JUST TO SEE PRIVATE PAGE WHILE RUNNING
     }
     
     func onAuthChallengeReceived(challenge:AnyObject){

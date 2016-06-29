@@ -44,12 +44,12 @@ class PrivateViewController: UIViewController, UIImagePickerControllerDelegate ,
         cameraButton.enabled  = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         self.objectStoreResource = HttpResource(schema:Consts.ObjectStorageScheme, host: Consts.ObjectStorageHost, port: Consts.ObjectStoragePort, path: ObjectStorageEndpoint)
 
-        HttpClient.get(resource: self.objectStoreResource!, headers: nil, completionHandler: {(error, status, headers, data) in
-            if error != nil{
-                self.logger.debug("Get public object list threw error: \(error)")
-            }
-            self.displayObjects(data!)
-        })
+//        HttpClient.get(resource: self.objectStoreResource!, headers: nil, completionHandler: {(error, status, headers, data) in
+//            if error != nil{
+//                self.logger.debug("Get public object list threw error: \(error)")
+//            }
+//            self.displayObjects(data!)
+//        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,7 +58,9 @@ class PrivateViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
     
     func displayObjects(objects: NSData){
-        
+        //parse array of names, 
+        //GET the data, 
+        //put into uiImageViewer
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){

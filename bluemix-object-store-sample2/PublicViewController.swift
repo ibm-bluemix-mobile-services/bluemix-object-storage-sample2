@@ -28,12 +28,12 @@ class PublicViewController: UIViewController, UIImagePickerControllerDelegate, U
         cameraButton.enabled  = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         
         
-        HttpClient.get(resource: self.objectStoreResource!, headers: nil, completionHandler: {(error, status, headers, data) in
-            if error != nil{
-                self.logger.debug("Get public object list threw error: \(error)")
-            }
-            self.displayObjects(data!)
-        })
+//        HttpClient.get(resource: self.objectStoreResource!, headers: nil, completionHandler: {(error, status, headers, data) in
+//            if error != nil{
+//                self.logger.debug("Get public object list threw error: \(error)")
+//            }
+//            self.displayObjects(data!)
+//        })
         
     }
     
@@ -58,7 +58,9 @@ class PublicViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func displayObjects(objects: NSData){
-        //display
+        //parse array of names,
+        //GET the data,
+        //put into uiImageViewer
     }
 
 
