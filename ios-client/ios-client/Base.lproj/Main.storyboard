@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Public-->
+        <!--Shared-->
         <scene sceneID="LPs-Kc-0bc">
             <objects>
-                <tableViewController storyboardIdentifier="publicContainer" title="Public" useStoryboardIdentifierAsRestorationIdentifier="YES" id="keB-FO-MZM" customClass="PhotoContainer" customModule="ios_client" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="publicContainer" title="Shared" useStoryboardIdentifierAsRestorationIdentifier="YES" id="keB-FO-MZM" customClass="PhotoContainer" customModule="ios_client" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="260" sectionHeaderHeight="28" sectionFooterHeight="28" id="qxl-5j-KoZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="2048" y="217"/>
         </scene>
-        <!--Private-->
+        <!--My Album-->
         <scene sceneID="lN8-tU-Aga">
             <objects>
-                <tableViewController storyboardIdentifier="privateContainer" title="Private" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MKl-YA-LnI" customClass="PhotoContainer" customModule="ios_client" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="privateContainer" title="My Album" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MKl-YA-LnI" customClass="PhotoContainer" customModule="ios_client" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="260" sectionHeaderHeight="28" sectionFooterHeight="28" id="MgQ-2o-laq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
