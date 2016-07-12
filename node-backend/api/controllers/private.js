@@ -13,8 +13,8 @@ function listPrivateContainer(req, res) {
             return container.listObjects();
         })
         .then(function(list) {
-            _.forEach(list, function(name) {
-                var obj = { name: name };
+            _.forEach(list, function(object) {
+                var obj = { name: object.objectName() };
                 objectList.push(obj);
             });
             res.status(200).send(objectList);

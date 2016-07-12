@@ -55,6 +55,7 @@ paths:
       description: Store `object` inside the *public* container
       parameters:
         - $ref: '#/parameters/storeObject'
+#        - $ref: '#/parameters/requestBody'
       responses:
         200:
           $ref: '#/responses/storeObjectSuccess'
@@ -99,6 +100,7 @@ paths:
       description: Store `object` inside the user's container
       parameters:
         - $ref: '#/parameters/storeObject'
+        - $ref: '#/parameters/requestBody'
       responses:
         200:
           $ref: '#/responses/storeObjectSuccess'
@@ -138,6 +140,13 @@ parameters:
     description: The name of the object to store
     required: true
     type: string
+  requestBody:
+    name: content
+    in: body
+    description: The content of the object to store
+    required: true
+    schema:
+      type: string
   deleteObject:
     name: object
     in: path
@@ -154,6 +163,8 @@ responses:
   fetchObjectSuccess:
     description: >-
      `object` was successfully retrieved from the ocontainer
+    schema:
+      type: string
   objectNotExist:
     description: >-
      `object` does not exist in the container

@@ -1,6 +1,9 @@
 
 var ObjectStorage = require('bluemix-objectstorage').ObjectStorage;
 var _ = require('lodash');
+var log4js = require('log4js');
+
+var logger = log4js.getLogger('public');
 
 var objStorage = new ObjectStorage();
 
@@ -15,6 +18,7 @@ function listPublicContainer(req, res) {
                 var obj = { name: object.objectName() };
                 objectList.push(obj);
             });
+            logger.debug('Completed getting list of objects in public container');
             res.status(200).json(objectList);
         })
         .catch(function(err) {
