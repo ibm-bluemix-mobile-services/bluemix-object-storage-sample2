@@ -38,7 +38,6 @@ class LoginView: UIViewController {
         super.viewDidLoad()
         
         self.indicator.stopAnimating()
-        Logger.sdkDebugLoggingEnabled = true
         
         let tapRecognizer = UITapGestureRecognizer(target:self, action: #selector(LoginView.handleBackgroundTap(_:)))
         

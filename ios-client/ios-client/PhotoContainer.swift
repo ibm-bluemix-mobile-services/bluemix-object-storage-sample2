@@ -22,7 +22,7 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
     let defaultCellHeight = 265.0
     let theFuture = NSDate.distantFuture().timeIntervalSince1970
     
-    var resourceUrl = "http://localhost:10010"
+    var resourceUrl = "https://sample-backend.mybluemix.net"
     var path: String?
     var tableTitle: String?
     
@@ -227,7 +227,7 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
             let index = self.objectList.indexOf(element)
             self.objectList.removeAtIndex(index!)
             self.contentCache.removeValueForKey(element)
-            indexPaths.append(NSIndexPath(forRow: self.objectList.count, inSection: 0))
+            indexPaths.append(NSIndexPath(forRow: (self.tableView.numberOfRowsInSection(0) - 1), inSection: 0))
         }
         self.dispatchOnMainQueueAfterDelay(0) {
             self.tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Right)
@@ -294,7 +294,9 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
             if response.statusCode != 200 {
                 let alert = UIAlertController(title: "", message: "An error ocurred while uploading \(withName)", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.dispatchOnMainQueueAfterDelay(0) {
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
             }
             else {
                 self.refreshTableView(nil)
@@ -317,15 +319,16 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
                 if status == 404 {
                     alert = UIAlertController(title: "", message: "Unable to locate \(withName)", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "Okay", style: .Destructive, handler: { (alertAction) in
-                        let index = self.objectList.indexOf(withName)
-                        self.deleteRows(Set([self.objectList[index!]]))
+                        self.refreshTableView(nil)
                     }))
                 }
                 else {
                     alert = UIAlertController(title: "", message: "An error ocurred while deleting \(withName)", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: nil))
                 }
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.dispatchOnMainQueueAfterDelay(0) {
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
             }
             else {
                 self.refreshTableView(nil)
