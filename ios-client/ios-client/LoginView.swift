@@ -78,8 +78,4 @@ class LoginView: UIViewController {
         usernameField.resignFirstResponder()
         passwordField.resignFirstResponder()
     }
-
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//    }
 }

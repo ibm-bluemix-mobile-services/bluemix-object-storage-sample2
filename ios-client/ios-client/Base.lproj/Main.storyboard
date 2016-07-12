@@ -141,7 +141,7 @@
         <scene sceneID="uYm-gh-vIs">
             <objects>
                 <navigationController storyboardIdentifier="privateNav" title="PrivateNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s8v-q8-TB2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Album" id="e92-4q-kCp"/>
+                    <tabBarItem key="tabBarItem" title="My Album" image="private" id="e92-4q-kCp"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="tzl-VB-PS4">
@@ -161,7 +161,7 @@
         <scene sceneID="Jfm-Ea-sXS">
             <objects>
                 <navigationController storyboardIdentifier="publicNav" title="PublicNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8jB-FC-Ub1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shared Album" id="JyR-EU-Mbf"/>
+                    <tabBarItem key="tabBarItem" title="Shared" image="public" id="JyR-EU-Mbf"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="lUF-Eq-RRZ">
@@ -266,4 +266,8 @@
             <point key="canvasLocation" x="-211" y="1320"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="private" width="32" height="32"/>
+        <image name="public" width="32" height="32"/>
+    </resources>
 </document>

@@ -132,8 +132,7 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
             if let error = error {
                 self.logger.error("Error received while logging out: \(error)")
             }
-            self.objectList = []
-            self.contentCache = [:]
+            self.deleteRows(Set(self.objectList))
             self.dispatchOnMainQueueAfterDelay(0) {
                 let index = ((self.tabBarController?.selectedIndex)! + 1) % 2
                 self.tabBarController?.selectedIndex = index
@@ -163,9 +162,7 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
                     else {
                         alert = UIAlertController(title: "", message: "An error ocurred while getting the contents of the container", preferredStyle: .Alert)
                     }
-                    alert.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: { (alertAction) in
-                        self.addFromCamera()
-                    }))
+                    alert.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                     
                     return
@@ -296,9 +293,7 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
             }
             if response.statusCode != 200 {
                 let alert = UIAlertController(title: "", message: "An error ocurred while uploading \(withName)", preferredStyle: .Alert)
-                alert.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: { (alertAction) in
-                self.addFromCamera()
-                }))
+                alert.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else {
@@ -321,13 +316,15 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
                 
                 if status == 404 {
                     alert = UIAlertController(title: "", message: "Unable to locate \(withName)", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: .Destructive, handler: { (alertAction) in
+                        let index = self.objectList.indexOf(withName)
+                        self.deleteRows(Set([self.objectList[index!]]))
+                    }))
                 }
                 else {
                     alert = UIAlertController(title: "", message: "An error ocurred while deleting \(withName)", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: nil))
                 }
-                alert.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: { (alertAction) in
-                    self.addFromCamera()
-                }))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else {
