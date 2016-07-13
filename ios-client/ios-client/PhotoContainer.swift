@@ -19,10 +19,9 @@ import SwiftyJSON
 class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let logger = Logger.logger(forName: "PhotoContainer")
     
-    let defaultCellHeight = 265.0
     let theFuture = NSDate.distantFuture().timeIntervalSince1970
     
-    var resourceUrl = "https://sample-backend.mybluemix.net"
+    var resourceUrl = "<backend-url>"
     var path: String?
     var tableTitle: String?
     
@@ -132,8 +131,9 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
             if let error = error {
                 self.logger.error("Error received while logging out: \(error)")
             }
-            self.deleteRows(Set(self.objectList))
+            let n = self.tableView.numberOfRowsInSection(0)
             self.dispatchOnMainQueueAfterDelay(0) {
+                self.deleteRows(Set(self.objectList.prefix(n)))
                 let index = ((self.tabBarController?.selectedIndex)! + 1) % 2
                 self.tabBarController?.selectedIndex = index
             }
@@ -222,12 +222,14 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
             return
         }
         var indexPaths: [NSIndexPath] = []
+        var i = 1
         
         for element in set {
             let index = self.objectList.indexOf(element)
             self.objectList.removeAtIndex(index!)
             self.contentCache.removeValueForKey(element)
-            indexPaths.append(NSIndexPath(forRow: (self.tableView.numberOfRowsInSection(0) - 1), inSection: 0))
+            indexPaths.append(NSIndexPath(forRow: (self.tableView.numberOfRowsInSection(0) - i), inSection: 0))
+            i += 1
         }
         self.dispatchOnMainQueueAfterDelay(0) {
             self.tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Right)
@@ -331,6 +333,7 @@ class PhotoContainer: UITableViewController, UIImagePickerControllerDelegate, UI
                 }
             }
             else {
+                self.navigationItem.title = self.tableTitle!
                 self.refreshTableView(nil)
             }
         }

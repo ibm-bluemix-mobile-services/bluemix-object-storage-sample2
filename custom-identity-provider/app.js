@@ -5,7 +5,7 @@ var jsonParser = require('body-parser').json();
 
 // Using hardcoded user repository
 var userRepository = {
-	"user": { password:"password", displayName:"", dob:""}
+	"<user>": { password:"<password>", displayName:"", dob:""}
 };
 
 var challengeJson = {

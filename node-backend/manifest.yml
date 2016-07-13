@@ -1,8 +1,8 @@
 applications:
 - disk_quota: 128M
-  host: sample-backend
-  name: sample-backend
+  host: <host>
+  name: <name>
   instances: 1
   services:
-    - mca
-    - object-storage
+    - <mca>
+    - <object-storage>

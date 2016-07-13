@@ -22,12 +22,12 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     var authDelegate: CustomAuthDelegate?
 
     override func viewDidLoad() {
-        BMSClient.sharedInstance.initializeWithBluemixAppRoute("https://sample-backend.mybluemix.net", bluemixAppGUID: "f6f5f5c0-ea83-43ca-8979-25f0071b06f6", bluemixRegion: BMSClient.REGION_US_SOUTH)
+        BMSClient.sharedInstance.initializeWithBluemixAppRoute("<application-url>", bluemixAppGUID: "<appGuid>", bluemixRegion: "<region>")
         BMSClient.sharedInstance.authorizationManager = MCAAuthorizationManager.sharedInstance
         mcaAuthManager.setAuthorizationPersistencePolicy(PersistencePolicy.NEVER)
         
         self.authDelegate = CustomAuthDelegate(tabBarController: self)
-        let authenticationRealm = "sampleRealm"
+        let authenticationRealm = "<realmName>"
         MCAAuthorizationManager.sharedInstance.registerAuthenticationDelegate(self.authDelegate!, realm: authenticationRealm)
         
         super.viewDidLoad()
@@ -52,6 +52,5 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             loginView.authDelegate = self.authDelegate
             authDelegate?.loginView = loginView
         }
-        print(segue.identifier)
     }
 }
